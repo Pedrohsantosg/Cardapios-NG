@@ -1,6 +1,10 @@
 .cardapios {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
 
 }

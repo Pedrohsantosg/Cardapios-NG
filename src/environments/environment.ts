@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://api-cardapios.herokuapp.com"
+  apiUrl: "https://api-cardapios.herokuapp.com​"
 };
 
 /*

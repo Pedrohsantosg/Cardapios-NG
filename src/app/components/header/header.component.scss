@@ -1,12 +1,13 @@
+.header {
+  background: var(--primary);
+  padding: 40px 30px;
 
-.header{
-    background-color: var(--primary);
-    padding: 40px 30px;
+  h1 {
+    color: #fff;
+    text-transform: uppercase;
+  }
 
-    h1{
-        color: #fff;
-        text-transform: uppercase;
-        
-    }
+  a {
+    text-decoration: none;
+  }
 }
-
