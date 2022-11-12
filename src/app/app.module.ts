@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { ListaCardapiosComponent } from './components/lista-cardapios/lista-cardapios.component';
+import {HttpClientModule}  from '@angular/common/http' 
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ListaCardapiosComponent } from './components/lista-cardapios/lista-card
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

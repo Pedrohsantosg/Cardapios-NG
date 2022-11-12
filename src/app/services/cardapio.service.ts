@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Cardapio } from '../models/cardapio';
+import {HttpClient}  from '@angular/common/http'
+import { environment } from 'src/environments/environment';
+import { cardapiosDTO } from '../models/cardapiosDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardapioService {
 
-  constructor() { }
+  //cardapios: Cardapio[] = [
+  //];
+
+  constructor(private http: HttpClient) { }
+
+
 
   cardapios:Cardapio[] = [
     {
@@ -21,7 +30,7 @@ export class CardapioService {
       titulo: "Cardapio 02",
       descricao: "Lorem apsorum",
       telefone: "(83)98737-0281", 
-      destaque: false,
+      destaque: true,
     },
     {
       imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnbkUpwQJO9JeNsTFNEndAbeiOCORvS-PVrQ&usqp=CAU",
@@ -39,8 +48,8 @@ export class CardapioService {
     },
   ];
 
-  getCardapios(){
-    return this.cardapios;
+  getCardapios(): Observable<cardapiosDTO> {
+    return this.http.get<cardapiosDTO>(environment.apiUrl + "/cardapios");
   }
 
   getCardapiosDestacados(){

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cardapio } from 'src/app/models/cardapio';
 import { CardapioService } from 'src/app/services/cardapio.service';
-
+import { cardapiosDTO } from 'src/app/models/cardapiosDTO';
 @Component({
   selector: 'app-lista-cardapios',
   templateUrl: './lista-cardapios.component.html',
@@ -13,10 +13,15 @@ export class ListaCardapiosComponent implements OnInit {
  
   constructor( private cardapioService: CardapioService) { }
 
-  cardapios?:Cardapio[];
+  cardapios?:any[];
 
   ngOnInit(): void {
-    this.cardapios = this.cardapioService.getCardapiosDestacados();
+    this.cardapioService
+    .getCardapios()
+    .subscribe(
+      resposta => {
+      this.cardapios = resposta.cardapios;
+    });
   }
 
 }
